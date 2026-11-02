@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Clique na Suzy</title>
+<link rel="stylesheet" href="styles.css?v=20261102-1">
+</head>
+<body>
+<main class="desktop" aria-label="Clique na Suzy">
+  <div class="topline"><div class="label">Clique na Suzy<br><small>(beta alpha experimental)</small></div><button class="help" id="tutorialQuestion" title="Tutorial">?</button><div class="money">Moedas: <span id="coins">0</span></div></div>
+  <section class="gamearea" id="gamearea">
+    <div class="hp"><span class="hptext" id="hptext">Energia: 20 / 20</span><div class="hpfill" id="hpfill"></div></div>
+    <img class="suzy" id="suzy" src="suzy.jpg" alt="Suzy" draggable="false">
+    <div class="speech" id="speech">Esperando você selecionar uma opção...</div>
+  </section>
+  <div class="recycle" id="recycle" title="Arraste a Suzy até aqui"><img class="binimage" src="recycle-bin-xp.png" alt="Lixeira do Windows XP"><span>Recycle Bin</span></div>
+  <div class="shop hidden" id="shop"><div class="shophead">Loja <button class="shopclose" id="close">X</button></div><div class="items" id="items"></div></div>
+  <div class="askbox" id="askbox">Quer fazer o tutorial?<br><button id="tutorialYes">Sim</button><button id="tutorialNo">Não</button></div>
+  <div class="notice hidden" id="notice">Suzy foi para a lixeira! Você ganhou <b>150 moedas</b>.</div>
+  <details class="account-panel" id="accountPanel">
+    <summary>Conta e Top 10 mundial</summary>
+    <div class="account-content">
+      <p id="accountStatus" class="account-status" role="status">Jogo local pronto. Conecte uma conta para salvar no ranking mundial.</p>
+      <form id="accountForm">
+        <div id="accountFields">
+          <label id="usernameLabel">Nome de jogador <input id="accountUsername" type="text" minlength="3" maxlength="20" autocomplete="nickname" placeholder="Seu nome"></label>
+          <label>E-mail <input id="accountEmail" type="email" autocomplete="email" placeholder="voce@email.com" required></label>
+          <label>Senha <input id="accountPassword" type="password" minlength="8" autocomplete="current-password" required></label>
+        </div>
+        <div class="account-actions">
+          <button type="button" id="accountLogin">Entrar</button>
+          <button type="button" id="accountSignup">Criar conta</button>
+          <button type="button" id="accountCreate" class="hidden">Confirmar cadastro</button>
+          <button type="button" id="accountCancel" class="hidden">Cancelar</button>
+          <button type="button" id="accountLogout" class="hidden">Sair</button>
+        </div>
+      </form>
+      <section id="adminTools" class="admin-tools hidden">
+        <h3>Gerenciar contas</h3>
+        <form id="adminCreateForm">
+          <label>Nome de usuário <input id="newUsername" type="text" minlength="3" maxlength="20" required></label>
+          <label>E-mail <input id="newEmail" type="email" required></label>
+          <label>Senha inicial <input id="newPassword" type="password" minlength="8" required></label>
+          <button type="submit">Criar conta</button>
+        </form>
+        <p id="adminStatus" class="account-status" role="status"></p>
+        <div id="adminUsers" class="admin-users"></div>
+      </section>
+      <h3>Top 10 mundial</h3>
+      <ol id="leaderboard"><li>Conectando ao ranking…</li></ol>
+      <a class="full-ranking-link" href="ranking.html">Pesquisar na lista completa</a>
+    </div>
+  </details>
+  <footer class="taskbar"><button class="start" id="shopbtn">Loja</button><div class="taskbutton">Clique na Suzy</div><div class="clock" id="clock">12:00</div></footer>
+  <div class="fake-cursor hidden" id="fakeCursor"><i></i></div>
+  <div class="fake-cursor hidden" id="fakeCursor2"><i></i></div><div class="fake-cursor hidden" id="fakeCursor3"><i></i></div>
+  <section class="crash-screen hidden" id="crashScreen" aria-modal="true" role="dialog"><div class="crash-inner"><h2>Windows</h2><p>A problem has been detected and Windows has been shut down to prevent damage to your computer.</p><p>SUZY_GAME_ERROR</p><p>If this is the first time you've seen this stop error screen, restart your computer. If this screen appears again, answer the questions below to restart the game.</p><p id="crashProgress"></p><h2 id="crashQuestion"></h2><div class="crash-options" id="crashOptions"></div><div class="crash-prompt" id="crashPrompt"><label for="crashInput">C:\&gt;</label><input id="crashInput" type="text" maxlength="1" autocomplete="off" aria-label="Digite A, B, C ou D"><span>Digite A, B, C ou D e pressione Enter</span></div><div class="crash-result hidden" id="crashResult"></div><button class="crash-continue hidden" id="crashContinue">Continuar</button></div></section>
+</main>
+<script src="supabase-config.js"></script>
+<script src="accounts.js?v=20261102-1" defer></script>
+<script src="game.js?v=20261102-1" defer></script>
+</body>
+</html>

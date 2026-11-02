@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#1766c2">
+  <title>Ranking mundial — Clique na Suzy</title>
+  <link rel="stylesheet" href="ranking.css?v=20261102-1">
+</head>
+<body>
+  <main class="ranking-window">
+    <header class="titlebar"><h1>Ranking mundial</h1><a href="index.html">Voltar ao jogo</a></header>
+    <section class="ranking-content" aria-labelledby="rankingTitle">
+      <h2 id="rankingTitle">Todos os jogadores</h2>
+      <p class="description">O ranking mostra o saldo atual. Jogadores com zero moedas não aparecem.</p>
+      <label class="search-label" for="playerSearch">Pesquisar jogador</label>
+      <input id="playerSearch" type="search" placeholder="Digite o nome do jogador" autocomplete="off">
+      <div class="list-heading"><span id="resultsStatus" role="status">Carregando ranking…</span><button id="refreshRanking" type="button">Atualizar</button></div>
+      <ol id="fullLeaderboard" class="full-leaderboard"></ol>
+      <p id="rankingMessage" class="ranking-message" role="status"></p>
+    </section>
+  </main>
+  <script src="supabase-config.js"></script>
+  <script src="ranking.js?v=20261102-1" defer></script>
+</body>
+</html>
